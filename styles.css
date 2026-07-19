@@ -1443,4 +1443,286 @@ img {
   .section {
     padding: 80px 0;
   }
+  .processo-grid {
+    grid-template-columns: 1fr;
+  }
+  .processo-step {
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+  }
+  .processo-numero {
+    min-width: 56px;
+    height: 56px;
+    font-size: 1.2rem;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .faq-extra {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== PROCESSO PASSO A PASSO ===== */
+.processo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.processo-grid::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-30), var(--gold-30), transparent);
+  z-index: 0;
+}
+
+.processo-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.processo-numero {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 50%;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--bg-primary);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(245, 184, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.processo-step:hover .processo-numero {
+  transform: scale(1.1);
+}
+
+.processo-step h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.processo-step p {
+  font-size: 0.85rem;
+  color: var(--white-60);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+/* ===== GOOGLE REVIEWS ===== */
+.reviews-section {
+  background: linear-gradient(180deg, var(--bg-tertiary), var(--bg-primary));
+}
+
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.reviews-google-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.reviews-google-logo svg {
+  width: 24px;
+  height: 24px;
+}
+
+.reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.reviews-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.reviews-count {
+  font-size: 0.9rem;
+  color: var(--white-60);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--white-10);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: border-color 0.3s;
+}
+
+.review-card:hover {
+  border-color: var(--gold-30);
+}
+
+.review-stars {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  color: var(--white-80);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4285f4, #34a853);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.review-name {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.review-time {
+  font-size: 0.75rem;
+  color: var(--white-60);
+}
+
+/* ===== INSTAGRAM FEED ===== */
+.instagram-section {
+  padding: 80px 0;
+  background: var(--bg-primary);
+}
+
+.instagram-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.instagram-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.3s;
+}
+
+.instagram-handle:hover {
+  opacity: 0.8;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
+.instagram-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.instagram-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.instagram-item:hover img {
+  transform: scale(1.1);
+}
+
+.instagram-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 184, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram-item:hover .instagram-overlay {
+  opacity: 1;
+}
+
+.instagram-overlay svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+/* ===== FAQ EXPANDIDO ===== */
+.faq-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.faq-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-extra .faq-item {
+  margin-bottom: 0;
 }
