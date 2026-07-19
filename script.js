@@ -164,43 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Exit popup
-  const popupOverlay = document.querySelector('.exit-popup-overlay');
-  if (popupOverlay) {
-    let popupShown = sessionStorage.getItem('popup_shown');
-
-    document.addEventListener('mouseout', (e) => {
-      if (!popupShown && e.clientY < 5) {
-        popupOverlay.classList.add('active');
-        sessionStorage.setItem('popup_shown', 'true');
-        popupShown = true;
-      }
-    });
-
-    // Also show after 45 seconds
-    setTimeout(() => {
-      if (!popupShown) {
-        popupOverlay.classList.add('active');
-        sessionStorage.setItem('popup_shown', 'true');
-        popupShown = true;
-      }
-    }, 45000);
-
-    // Close popup
-    const closeBtn = popupOverlay.querySelector('.exit-popup-close');
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        popupOverlay.classList.remove('active');
-      });
-    }
-
-    popupOverlay.addEventListener('click', (e) => {
-      if (e.target === popupOverlay) {
-        popupOverlay.classList.remove('active');
-      }
-    });
-  }
-
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
