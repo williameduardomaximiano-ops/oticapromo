@@ -1470,17 +1470,19 @@ img {
 /* ===== PROCESSO PASSO A PASSO ===== */
 .processo-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   position: relative;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .processo-grid::before {
   content: '';
   position: absolute;
   top: 40px;
-  left: 12.5%;
-  right: 12.5%;
+  left: 16.66%;
+  right: 16.66%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold-30), var(--gold-30), transparent);
   z-index: 0;
